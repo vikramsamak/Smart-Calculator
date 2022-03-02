@@ -9,6 +9,10 @@ def calculate():
             num2 = n2entry.get()
             num1 = float(num1)  
             num2 = float(num2)
+            add.delete(0,END)
+            sub.delete(0,END)
+            mul.delete(0,END)
+            div.delete(0,END)
             addition = num1+num2
             substraction = num1-num2
             multiplication = num1*num2
@@ -23,6 +27,8 @@ def calculate():
             error_message = "Invalid Entry"
             n1entry.insert(0, error_message)
             n2entry.insert(0, error_message)
+        except ZeroDivisionError:
+            div.insert(0,math_error)  
 def resetall():
     n1entry.delete(0,END)
     n2entry.delete(0,END)
